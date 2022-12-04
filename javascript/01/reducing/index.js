@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-const file = readFileSync("input.txt", "utf8")
+const file = readFileSync("./input.txt", "utf8")
 
 const lines = file.split("\n");
 
@@ -17,7 +17,6 @@ export const processor = (acc, next) => {
 	acc.current = acc.current + Number(next)
 	return acc
 }
-
 
 const result = lines.reduce(processor, innitialState)
 const orderedResult = result.array.sort((a, b) => a - b)
