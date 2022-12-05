@@ -3,6 +3,7 @@ import { pipeline as streamPipeline } from "stream"
 import { FileAdapter, StdinAdapter } from '../../shared/stream/inputAdapters/index.js'
 import { elfCaloriesProcessor } from './elfCaloriesProcessor.js'
 import { toNumberFormatter } from './inputFormatter.js'
+import { topElfSelector } from './topElfSelector.js'
 
 const pipeline = promisify(streamPipeline);
 
@@ -17,6 +18,7 @@ async function run () {
 		inputAdapter.stream(),
 		new toNumberFormatter(),
 		new elfCaloriesProcessor(),
+		// new topElfSelector(),
 		process.stdout)
 }
 

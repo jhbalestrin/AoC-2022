@@ -9,14 +9,16 @@ export class elfCaloriesProcessor extends Transform{
 	}
 	_transform(obj, encoding, callback) {
 		if(obj === "end"){
-			return callback(null, `Finished elfs\n`)
+			return callback(null, `end`)
 		}
 		if(typeof obj === "number"){
 			this.calories += obj
-			return callback(null, `Elf received ${obj} has total ${this.calories} calories\n`)
+			// return callback(null, `Elf received ${obj} has total ${this.calories} calories\n`)
+			return
 		}
 		if(typeof obj === "string"){
-			callback(null,`Elf finished with ${this.calories} calories\n`)
+			// callback(null,`Elf finished with ${this.calories} calories\n`)
+			callback(null, this.calories)
 			this.calories = 0
 			return
 		}
