@@ -18,7 +18,7 @@ async function run () {
 		inputAdapter.stream(),
 		new toNumberFormatter(),
 		new elfCaloriesProcessor(),
-		// new topElfSelector(),
+		new topElfSelector(3),
 		process.stdout)
 }
 

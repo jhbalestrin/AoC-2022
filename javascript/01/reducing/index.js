@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-const file = readFileSync("./input.txt", "utf8")
+const file = readFileSync("../input.txt", "utf8")
 
 const lines = file.split("\n");
 

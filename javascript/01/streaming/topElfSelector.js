@@ -5,16 +5,17 @@ export class topElfSelector extends Transform{
 		super({
 			writableObjectMode: true
 		})
+		this.elfCount = elfCount
 		this.array = []
 	}
 	_transform(obj, encoding, callback) {
-		if(obj === "end"){
-			return callback(null, "lol")
+		if(typeof obj === "symbol"){
+			const sum = this.array.sort((a,b) => b-a).slice(0, this.elfCount).reduce((acc, curr) => acc + curr, 0)
+			this.push(sum.toString())
 		}
 		if(typeof obj === "number"){
 			this.array.push(obj)
-			// return callback(null, `Elf received ${obj} has total ${this.calories} calories\n`)
 		}
-		callback(new Error("Invalid input"))
+		callback()
 	}
 }

@@ -19,7 +19,7 @@ export class toNumberFormatter extends Transform{
 				this.push("Finished elf\n")
 			}
 		})
-		callback(null,"end")
+		callback(null, Symbol("end"))
 	}
 
 }
