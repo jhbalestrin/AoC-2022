@@ -1,0 +1,14 @@
+problem 1
+A = rock
+B = paper
+C = scissors
+
+problem 2
+
+Y = Draw
+X = Lose
+Z = Win
+
+Rock = 1
+Paper = 2
+Scissors = 3
